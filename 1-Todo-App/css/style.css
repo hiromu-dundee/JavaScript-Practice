@@ -1,0 +1,104 @@
+@charset "utf-8";
+
+body {
+    background-color:rgb(174, 247, 222);
+}
+
+h1 {
+    text-align:center;
+    font-size:50px;
+    margin:2rem;
+    padding:1.5rem;
+}
+
+#todo-add {
+    display:flex;
+    /* place-items:center; */
+    /* text-align:center; */
+    align-items:center;
+    justify-content:center;
+    margin:2rem;
+    padding:1.5rem;
+    
+}
+
+#content, .editTodo {
+    background-color:white;
+    font-size:18px;
+    border:2px solid black;
+    border-radius:8px 0 0 8px;
+    padding: 0.5rem;
+    margin: 0.8rem 0;
+    transition:.5s;
+    /* margin:1rem; */
+}
+
+#content:focus, .editTodo:focus {
+    box-shadow:0 0 20px #04f;
+}
+
+/* Button Design */
+
+.edit-complete, #add-btn {
+    /* border: 2px solid #0044ff;s */
+    padding:0.7rem 0.5rem;
+    /* margin:1rem; */
+    background-color:rgb(53, 233, 233);
+    border-radius:0 8px 8px 0;
+    transition:.5s;
+    color:white;
+}
+
+#add-btn:hover, .edit-complete:hover {
+    box-shadow:0 0 10px #0044ff;
+}
+
+/* todo-content */
+
+#todo-list {
+
+    display:grid;
+    list-style:none;
+    margin:2rem;
+    place-items:center;
+    gap:10px;
+    grid-template-columns:repeat(4, 1fr);
+}
+
+.todo {
+    /* display:flex; */
+    width:335px;
+    height:300px;
+    padding:1rem;
+    margin:1rem;
+    background-color:rgb(205, 164, 243);
+    border-radius:8px;
+}
+
+.todo-number {
+    font-size:2rem;
+}
+
+.todo-content {
+    font-size: 1.6rem;
+}
+
+.delete, .edit {
+    place-items:center;
+    /* align-items:center; */
+    margin:1rem 0;
+    padding:0.5rem;
+    background-color:#0044ff;
+    color:white;
+    border-radius:12px;
+    transition:.5s;
+}
+
+.delete:hover, .edit:hover {
+    box-shadow: 0 0 30px rgb(15, 180, 225);
+}
+
+.edit {
+    margin:1rem;
+    padding : 0.5rem;
+}
