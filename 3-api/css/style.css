@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+body {
+    background-image: url(../images/sunny.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    font-family: 'Yu Gothic';
+}
+
+.forecasts {
+    /* padding: 20px; */
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 80%;
+    background-color: rgba(50, 50, 50, 0.6);
+    border-radius: 10px;
+}
+
+.forecasts-display {
+    list-style: none;
+}
+
+.telop {
+    color: white;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.details {
+    display: flex;
+    justify-content: center;
+}
+
+.location-name {
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.main-display {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#temperature {
+    color: white;
+    font-size: 3rem;
+}
+
+.humid,
+.wind {
+    color: white;
+    font-size: 1.5rem;
+    padding-right: 1rem;
+}
+
+.weatherImage {
+    width: 100px;
+    height: auto;
+}
+
+.forecasts-display {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.weatherItem {
+    /* margin: 2rem; */
+    color: white;
+    padding: 3rem;
+    border-right: 3px solid #eee;
+
+}
+
+@media (min-width:800px) {}
