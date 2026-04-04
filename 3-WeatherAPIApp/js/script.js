@@ -3,6 +3,16 @@ const weatherImage = document.querySelector('.weatherImage');
 const weatherTelop = document.querySelector('.telop');
 const temperature = document.querySelector('#temperature');
 
+const setBackgroundImage = function (weatherCode) {
+    if (weatherCode <= 1) {
+        document.body.style.backgroundImage = "url('images/sunny.jpg')";
+    } else if (weatherCode <= 3) {
+        document.body.style.backgroundImage = "url('images/cloudy.jpg')";
+    } else {
+        document.body.style.backgroundImage = "url('images/rainy.jpg')";
+    }
+}
+
 const Weather = function (weatherCode) {
     if (weatherCode <= 1) {
         return ['images/tennki-illust2.png', '晴れ'];
@@ -45,6 +55,7 @@ window.addEventListener('load', () => {
             const weatherCode = forecasts.daily.weathercode[0];
 
             [weatherImage.src, weatherTelop.textContent] = Weather(weatherCode);
+            setBackgroundImage(weatherCode);
             console.log(weatherImage);
             // weatherImage.src = 'images/tennki-illust5.png';
 
