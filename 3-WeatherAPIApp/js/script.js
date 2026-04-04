@@ -77,12 +77,29 @@ window.addEventListener('load', () => {
                 weatherItem.className = 'weatherItem';
                 const [img, telop] = Weather(code);
 
-                weatherItem.innerHTML = `
-                    <h2>${month}月${day}日(${calculateDay(Day.getDay())})</h2>
-                    <img class="weatherImage" src="${img}" alt="">
-                    <p class="sub-temp">最高：${temp_max}℃</p>
-                    <p class="sub-temp">最低：${temp_min}℃</p>
-                `;
+                console.log(document.body.clientWidth);
+
+                if (document.body.clientWidth < 800) {
+                    weatherItem.innerHTML = `
+                        <h2>${month}月${day}日(${calculateDay(Day.getDay())})</h2>
+                        <div class="sub-list">
+                            <img class="weatherImage-sub" src="${img}" alt="">
+                            <div class="temp">
+                                <p class="sub-temp">最高：${temp_max}℃</p>
+                                <p class="sub-temp">最低：${temp_min}℃</p>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    weatherItem.innerHTML = `
+                        <h2>${month}月${day}日(${calculateDay(Day.getDay())})</h2>
+                        <img class="weatherImage-sub" src="${img}" alt="">
+                        <div class="temp">
+                            <p class="sub-temp">最高：${temp_max}℃</p>
+                            <p class="sub-temp">最低：${temp_min}℃</p>
+                        </div>
+                    `;
+                }
                 listItem.appendChild(weatherItem);
             }
 
