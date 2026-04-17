@@ -48,9 +48,7 @@ const calculateDay = function (dayCode) {
 };
 
 window.addEventListener("load", () => {
-  fetch(
-    "https://api.open-meteo.com/v1/forecast?latitude=35.6895&longitude=139.6917&daily=weathercode,precipitation_sum,temperature_2m_max,temperature_2m_min&current=temperature_2m,relative_humidity_2m,wind_speed_10m&timezone=Asia%2FTokyo",
-  )
+  fetch("URL")
     .then((response) => response.json())
     .then((forecasts) => {
       console.log(forecasts);
