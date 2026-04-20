@@ -41,19 +41,30 @@ h1 {
 
 /* Button Design */
 
+#download {
+    margin-left: 2rem;
+    border-radius: 8px;
+}
+
 .edit-complete,
-#add-btn {
+#add-btn,
+#download {
     /* border: 2px solid #0044ff;s */
     padding: 0.7rem 0.5rem;
     /* margin:1rem; */
     background-color: rgb(53, 233, 233);
-    border-radius: 0 8px 8px 0;
     transition: .5s;
     color: white;
 }
 
+.edit-complete,
+#add-btn {
+    border-radius: 0 8px 8px 0;
+}
+
 #add-btn:hover,
-.edit-complete:hover {
+.edit-complete:hover,
+#download:hover {
     box-shadow: 0 0 10px #0044ff;
 }
 
@@ -109,7 +120,8 @@ h1 {
     padding: 0.5rem;
 }
 
-.Error-Message {
+.Error-Message,
+.not-download {
     text-align: center;
     color: red;
     font-size: 1.5rem;

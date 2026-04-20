@@ -2,8 +2,38 @@ const addBtn = document.querySelector("#add-btn");
 const content = document.querySelector("#content");
 const contentList = document.querySelector("#todo-list");
 const ErrorMessage = document.querySelector(".Error-Message");
+const downloadBtn = document.querySelector("#download");
+const notDownload = document.querySelector(".not-download");
 
 let todos = [];
+
+downloadBtn.addEventListener("click", () => {
+  if (todos.length === 0) {
+    notDownload.textContent = "No Todo item to download.";
+  } else {
+    const escapeCSV = (text) => `"${String(text).replace(/"/g, '""')}"`;
+    const rows = todos.map((todo, index) =>
+      [index + 1, todo.todoContent].map(escapeCSV).join(","),
+    );
+    const csvContent = ["Index,Todo", ...rows].join("\r\n");
+    const bom = new Uint8Array([0xef, 0xbb, 0xbf]);
+    const blob = new Blob([bom, csvContent], {
+      type: "text/csv;charset=utf-8",
+    });
+
+    const link = document.createElement("a");
+    if (link.download !== undefined) {
+      const url = URL.createObjectURL(blob);
+      link.setAttribute("href", url);
+      link.setAttribute("download", "todos.csv");
+      link.style.visibility = "hidden";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    }
+  }
+});
 
 addBtn.addEventListener("click", () => {
   ErrorMessage.textContent = "";
