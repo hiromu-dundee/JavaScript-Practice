@@ -1,0 +1,45 @@
+@charset 'UTF-8';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    padding: 1rem 1.5rem;
+    font-size: 2rem;
+    margin: 0.3rem;
+    height: 5rem;
+    width: 7rem;
+    cursor: pointer;
+    border-radius: 1rem;
+    transition: .5s;
+}
+
+button:hover {
+    box-shadow: 0 0 15px rgb(0, 166, 255);
+}
+
+.overall {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    align-content: center;
+    background-color: black;
+}
+
+.display {
+    color: white;
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    text-align: right
+}
+
+.number {
+    background-color: gray;
+    color: white;
+}
+
+.operator {
+    background-color: rgb(255, 157, 0);
+}
