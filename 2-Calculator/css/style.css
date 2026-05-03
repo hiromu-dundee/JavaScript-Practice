@@ -47,6 +47,6 @@ body {
     background-color: rgb(255, 170, 0);
 }
 
-.big {
+.big-button {
     grid-column: span 2;
 }

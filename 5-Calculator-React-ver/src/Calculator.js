@@ -1,4 +1,5 @@
 import { useState } from "react";
+import classnames from "classnames";
 
 import "./Calculator.css";
 
@@ -61,7 +62,26 @@ export default function Calculator() {
   return (
     <div className="overall">
       <p className="display">{display}</p>
-      <div className="row">
+      <div>
+        <button type="button" onClick={handleClear} className="operator">
+          AC
+        </button>
+        <button type="button" className="number">
+          +/-
+        </button>
+        <button type="button" className="number">
+          %
+        </button>
+        <button
+          type="button"
+          onClick={() => onOperation("/")}
+          className="operator"
+        >
+          ÷
+        </button>
+      </div>
+
+      <div>
         <button type="button" onClick={() => onDisplay(7)} className="number">
           7
         </button>
@@ -73,14 +93,14 @@ export default function Calculator() {
         </button>
         <button
           type="button"
-          onClick={() => onOperation("/")}
+          onClick={() => onOperation("*")}
           className="operator"
         >
-          ÷
+          ×
         </button>
       </div>
 
-      <div className="row">
+      <div>
         <button type="button" onClick={() => onDisplay(4)} className="number">
           4
         </button>
@@ -92,14 +112,14 @@ export default function Calculator() {
         </button>
         <button
           type="button"
-          onClick={() => onOperation("*")}
+          onClick={() => onOperation("-")}
           className="operator"
         >
-          ×
+          -
         </button>
       </div>
 
-      <div className="row">
+      <div>
         <button type="button" onClick={() => onDisplay(1)} className="number">
           1
         </button>
@@ -111,28 +131,30 @@ export default function Calculator() {
         </button>
         <button
           type="button"
-          onClick={() => onOperation("-")}
-          className="operator"
-        >
-          -
-        </button>
-      </div>
-
-      <div className="row">
-        <button type="button" onClick={handleClear} className="operator">
-          AC
-        </button>
-
-        <button type="button" onClick={() => onDisplay(0)} className="number">
-          0
-        </button>
-        <button
-          type="button"
           onClick={() => onOperation("+")}
           className="operator"
         >
           +
         </button>
+      </div>
+
+      <div className="row">
+        <button
+          type="button"
+          onClick={() => onDisplay(0)}
+          className={classnames("big-button", "number")}
+        >
+          0
+        </button>
+
+        <button
+          type="button"
+          onClick={() => onDisplay(".")}
+          className="operator"
+        >
+          .
+        </button>
+
         <button type="button" onClick={handleResult} className="operator">
           =
         </button>

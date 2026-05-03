@@ -43,3 +43,8 @@ button:hover {
 .operator {
     background-color: rgb(255, 157, 0);
 }
+
+.row {
+    display:grid;
+    grid-template-columns: 2fr 1fr 1fr;
+}
