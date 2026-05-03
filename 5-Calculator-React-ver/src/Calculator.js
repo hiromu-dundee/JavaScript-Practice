@@ -60,16 +60,16 @@ export default function Calculator() {
   };
 
   return (
-    <div className="overall">
+    <div className="body-all">
       <p className="display">{display}</p>
-      <div>
-        <button type="button" onClick={handleClear} className="operator">
+      <div className="overall">
+        <button type="button" onClick={handleClear} className="command">
           AC
         </button>
-        <button type="button" className="number">
+        <button type="button" className="command">
           +/-
         </button>
-        <button type="button" className="number">
+        <button type="button" className="command">
           %
         </button>
         <button
@@ -79,9 +79,7 @@ export default function Calculator() {
         >
           ÷
         </button>
-      </div>
 
-      <div>
         <button type="button" onClick={() => onDisplay(7)} className="number">
           7
         </button>
@@ -98,9 +96,7 @@ export default function Calculator() {
         >
           ×
         </button>
-      </div>
 
-      <div>
         <button type="button" onClick={() => onDisplay(4)} className="number">
           4
         </button>
@@ -117,9 +113,7 @@ export default function Calculator() {
         >
           -
         </button>
-      </div>
 
-      <div>
         <button type="button" onClick={() => onDisplay(1)} className="number">
           1
         </button>
@@ -136,22 +130,16 @@ export default function Calculator() {
         >
           +
         </button>
-      </div>
 
-      <div className="row">
         <button
           type="button"
           onClick={() => onDisplay(0)}
-          className={classnames("big-button", "number")}
+          className={classnames("number", "big-button")}
         >
           0
         </button>
 
-        <button
-          type="button"
-          onClick={() => onDisplay(".")}
-          className="operator"
-        >
+        <button type="button" onClick={() => onDisplay(".")} className="number">
           .
         </button>
 

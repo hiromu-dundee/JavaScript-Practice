@@ -9,8 +9,6 @@ button {
     padding: 1rem 1.5rem;
     font-size: 2rem;
     margin: 0.3rem;
-    height: 5rem;
-    width: 7rem;
     cursor: pointer;
     border-radius: 1rem;
     transition: .5s;
@@ -20,31 +18,40 @@ button:hover {
     box-shadow: 0 0 15px rgb(0, 166, 255);
 }
 
-.overall {
-    display: grid;
+.body-all {
     place-items: center;
     height: 100vh;
     align-content: center;
     background-color: black;
 }
 
+.overall {
+    display: grid;
+    grid-template-columns:repeat(4, 1fr);
+}
+
 .display {
     color: white;
     margin-bottom: 2rem;
     font-size: 3rem;
-    text-align: right
+    text-align: right;
 }
 
 .number {
-    background-color: gray;
+    background-color: rgb(74, 74, 74);
     color: white;
 }
 
 .operator {
     background-color: rgb(255, 157, 0);
+    color:white;
 }
 
-.row {
-    display:grid;
-    grid-template-columns: 2fr 1fr 1fr;
+.command {
+    background-color:gray;
+    color:white;
+}
+
+.big-button {
+    grid-column: span 2;
 }
