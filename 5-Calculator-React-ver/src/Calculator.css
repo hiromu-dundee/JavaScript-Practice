@@ -55,3 +55,9 @@ button:hover {
 .big-button {
     grid-column: span 2;
 }
+
+.error-message {
+    height: 2rem;
+    color:white;
+    font-size:2rem;
+}

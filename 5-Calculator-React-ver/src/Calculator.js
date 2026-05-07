@@ -9,23 +9,38 @@ export default function Calculator() {
   const [display, setDisplay] = useState("0");
   const [prev, setPrev] = useState("");
   const [op, setOp] = useState("");
+  const [errorMessage, SetErrorMessage] = useState("");
 
   const onDisplay = (number) => {
+    display.includes(".") === true
+      ? SetErrorMessage("Include point now.")
+      : SetErrorMessage("");
+
     if (isResult) {
       setDisplay(String(number));
       isResult = false;
     } else {
       setDisplay(display === "0" ? String(number) : display + String(number));
+      SetErrorMessage("");
     }
   };
 
+  const onDotDisplay = (point) => {
+    display.includes(".") === true
+      ? SetErrorMessage("Include point now.")
+      : setDisplay(display + String(point));
+  };
+
   const onOperation = (operator) => {
+    SetErrorMessage("");
     setOp(operator);
     setPrev(display);
     setDisplay("0");
   };
 
   const handleResult = () => {
+    SetErrorMessage("");
+
     if (display === "0" || prev === "") return;
 
     const result1 = Number(prev);
@@ -54,6 +69,7 @@ export default function Calculator() {
   };
 
   const handleClear = () => {
+    SetErrorMessage("");
     setDisplay("0");
     setPrev("");
     setOp("");
@@ -61,6 +77,7 @@ export default function Calculator() {
 
   return (
     <div className="body-all">
+      <p className="error-message">{errorMessage}</p>
       <p className="display">{display}</p>
       <div className="overall">
         <button type="button" onClick={handleClear} className="command">
@@ -139,7 +156,11 @@ export default function Calculator() {
           0
         </button>
 
-        <button type="button" onClick={() => onDisplay(".")} className="number">
+        <button
+          type="button"
+          onClick={() => onDotDisplay(".")}
+          className="number"
+        >
           .
         </button>
 
