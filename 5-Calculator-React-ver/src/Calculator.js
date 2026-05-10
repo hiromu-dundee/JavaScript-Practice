@@ -68,6 +68,12 @@ export default function Calculator() {
     isResult = true;
   };
 
+  const handlePercent = () => {
+    const nowNumber = Number(display);
+
+    setDisplay(String(nowNumber * 0.01));
+  };
+
   const handleClear = () => {
     SetErrorMessage("");
     setDisplay("0");
@@ -86,7 +92,7 @@ export default function Calculator() {
         <button type="button" className="command">
           +/-
         </button>
-        <button type="button" className="command">
+        <button type="button" onClick={handlePercent} className="command">
           %
         </button>
         <button
