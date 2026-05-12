@@ -81,6 +81,12 @@ export default function Calculator() {
     setOp("");
   };
 
+  const handlePlusMinus = () => {
+    display.includes("-") === true
+      ? setDisplay(display.replace("-", ""))
+      : setDisplay("-" + display);
+  };
+
   return (
     <div className="body-all">
       <p className="error-message">{errorMessage}</p>
@@ -89,7 +95,7 @@ export default function Calculator() {
         <button type="button" onClick={handleClear} className="command">
           AC
         </button>
-        <button type="button" className="command">
+        <button type="button" onClick={handlePlusMinus} className="command">
           +/-
         </button>
         <button type="button" onClick={handlePercent} className="command">
